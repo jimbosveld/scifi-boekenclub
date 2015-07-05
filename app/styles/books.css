@@ -1,0 +1,48 @@
+.cover_in_database
+{
+    float: left;
+
+    width: 100px;
+    padding: 3px;
+
+    transform: perspective( 600px) rotateY( 25deg);
+}
+
+
+
+.cover_in_homepage
+{
+    float: left;
+
+    width: 180px;
+    padding: 10px;
+
+    cursor: pointer;
+    transition: all 1s;
+    transform: perspective( 600px) rotateY( 15deg);
+
+    border-radius: 13px;
+}
+
+.cover_in_homepage:hover
+{
+    transform: perspective( 600px) rotateY( 0deg);
+}
+
+.feature_image
+{
+    float: right;
+
+    width: 70%;
+    padding: 30px;
+
+    transition: all 1s;
+    transform: perspective( 600px) rotateY( 25deg);
+
+    border-radius: 34px;
+}
+
+.feature_image:hover
+{
+    transform: perspective( 600px) rotateY( 0deg);
+}

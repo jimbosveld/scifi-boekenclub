@@ -1,0 +1,104 @@
+/*Buttons*/
+
+.btn
+{
+    color: #20bff8;
+    border: 3px solid #20bff8;
+    border-radius: 0;
+}
+
+.btn:hover
+{
+    color: #fff;
+    border: 3px solid #20bff8;
+    background: #20bff8;
+}
+
+.logging-buttons
+{
+    margin-left: 2%;
+}
+
+/*Typography*/
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+    color: #028ec4;
+}
+
+p
+{
+    color: #01516f;
+}
+
+/*Elements*/
+
+.content
+{
+    padding-top: 80px;
+
+    background: #fff;
+}
+
+.form-control
+{
+    border-radius: 0;
+}
+
+hr
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+hr.style-scifi
+{
+    padding: 0;
+
+    text-align: center;
+
+    color: #20bff8;
+    border: none;
+    border-top: medium double #20bff8;
+}
+hr.style-scifi:after
+{
+    font-family: 'Glyphicons Halflings';
+    font-size: 1.5em;
+
+    position: relative;
+    top: -.7em;
+
+    display: inline-block;
+
+    padding: 0 .25em;
+
+    content: '\e043';
+
+    background: white;
+}
+
+/*Navbar*/
+
+
+.navbar,
+.navbar-default,
+.navbar-default .navbar-nav > .open > a
+{
+    border-bottom: 0;
+    background: #20bff8;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover
+{
+    color: #fff;
+    background-color: #20bff8;
+}

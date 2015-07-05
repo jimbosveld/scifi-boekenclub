@@ -1,0 +1,39 @@
+<div class="row" ng-repeat="feature in allBooks | orderBy: '-date_added'| limitTo:1">
+    <div class="col-md-4 visible-lg">
+        <img class="feature_image" ng-src="{{feature.cover}}">
+    </div>
+    <div class="col-md-4">
+        <h4>Nu aan het lezen</h4>
+        <h1>{{feature.title}}</h1>
+        <p>{{feature.description}}</p>
+        <div class="spacer"></div>
+        <button class="btn btn-default btn-lg" ui-sref="book({id:feature.$id})">Bespreek het boek</button>        
+    </div>
+    <div class="col-md-3" ng-controller="chatFirebase" ng-init="getChatsPreview(feature.$id)">
+        <h4>Laatste berichten</h4>
+        <div ng-if="chatsPreview.length > 0" ng-repeat="chat in chatsPreview  | reverse  | limitTo:3">
+            <div class="chat_body">
+                <p class="chat_paragraph">
+                    {{chat.body}}
+                </p>
+                <img class="chat_avatar_photo" ng-src="{{chat.user.google.cachedUserProfile.picture}}">
+                <span class="chat_avatar_timestamp">
+                    {{chat.dateAdded}}
+            </span>
+            </div>
+        </div>
+        <a ng-if="chatsPreview.length > 3" ui-sref="book({id:feature.$id})">Lees de overige {{chatsPreview.length - 3}} berichten</a>
+        <div ng-if="chatsPreview.length < 1">
+            <p>Nog geen berichten geplaatst.</p>
+        </div>
+    </div>
+</div>
+<hr class="style-scifi">
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <h4>Eerder gelezen</h4>
+        <div ng-repeat="book in allBooks | orderBy :'-date_added'" ng-if="$index > 0">
+            <img class="cover_in_homepage" ng-src="{{book.cover}}" ui-sref="book({id:book.$id})">
+        </div>
+    </div>
+</div>

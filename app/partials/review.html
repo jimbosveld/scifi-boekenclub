@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-2">
+        <h1>Laat je review achter</h1>
+        <textarea ng-model="review.review_text" ng-init="review.review_text = null" rows="10" class="form-control" id="review_text" placeholder="Plaats je review"></textarea>
+        <div class="spacer"></div>
+        <rating max="10" ng-model="review.rating"></rating>
+        <div class="spacer"></div>
+        <a id="submit_plot" ng-click="show_plot_text = !show_plot_text" class="btn">Plot</a>
+        <a id="submit_stijl" ng-click="show_stijl_text = !show_stijl_text" class="btn">Stijl</a>
+        <a id="submit_theme" ng-click="show_theme_text = !show_theme_text" class="btn">Thema</a>
+        <a ui-sref="book({id:book})" class="btn"><em>Terug naar het overzicht</em></a>
+        <div class="spacer"></div>
+        <textarea ng-show="show_plot_text" ng-model="review.plot_text" rows="4" class="form-control" id="plot_text" placeholder="Eventuele opmerkingen over het plot"></textarea>
+        <div class="spacer"></div>
+        <textarea ng-show="show_stijl_text" ng-model="review.stijl_text" rows="4" class="form-control" id="stijl_text" placeholder="Eventuele opmerkingen over de stijl"></textarea>
+        <div class="spacer"></div>
+        <textarea ng-show="show_theme_text" ng-model="review.theme_text" rows="4" class="form-control" id="theme_text" placeholder="Eventuele opmerkingen over het thema"></textarea>
+        <span id="saved" class="hidden">opgeslagen</span>        
+    </div>
+</div>

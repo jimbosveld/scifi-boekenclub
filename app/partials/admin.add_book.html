@@ -1,0 +1,33 @@
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="newBook.title" class="form-control" type="text" placeholder="Titel">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="newBook.author" class="form-control" type="text" placeholder="Auteur">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="newBook.cover" class="form-control" type="text" placeholder="Afbeelding">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="newBook.description" class="form-control" type="textarea" rows="10" placeholder="Beschrijving">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="newBook.date_added" class="form-control" type="date">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<button ng-click="addBookToFirebase()" class="btn btn-default">add book</button>
+	</div>
+</div>
+<div ng-repeat="book in booksInDatabase | orderBy: '-date_added' ">
+	<img class="cover_in_database" ng-src="{{book.cover}}" ui-sref="admin.edit_book({id:book.title})">
+</div>

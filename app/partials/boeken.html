@@ -1,0 +1,64 @@
+<div ng-controller="logging">
+    <div class="row">
+        <div class="spacer"></div>
+        <div class="col-sm- logging-buttons">
+            <a class="btn btn-default" ng-if="!authData" ng-click="logUserIn()">log in om te reageren</a>
+            <a class="btn btn-default" ng-if="authData" ng-click="logOut()">log uit</a>
+            <a class="btn btn-default" ng-if="authData" ui-sref="review({id:book.title,user:authData.google.displayName})">{{book.title}} uit? Laat je review achter</a>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-controller="displayReviewController" class="col-sm-12">
+            <div ng-repeat="review in allReviews">
+                <div class="review_card" ng-if="(review.review_text).length > 1">
+                    <p>{{review.name}} zegt het volgende:</p>
+                    <p><em>"{{review.review_text}}"</em></p>
+                    <p>
+                        <rating max="10" readonly="true" ng-model="review.rating"></rating>
+                    </p>
+                    <div ng-if="review.theme_text">
+                        <p>En over het thema:</p>
+                        <p><em>"{{review.theme_text}}"</em></p>
+                    </div>
+                    <div ng-if="review.stijl_text">
+                        <p>En over de stijl:</p>
+                        <p><em>"{{review.stijl_text}}"</em></p>
+                    </div>
+                    <div ng-if="review.plot_text">
+                        <p>En over het plot:</p>
+                        <p><em>"{{review.plot_text}}"</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="style-scifi">
+    <div class="row">
+        <div class="spacer"></div>
+        <div ng-controller="chatFirebase">
+            <div class="col-sm-4 hidden-xs">
+                <a target="_blank" href="{{link}}"="" class="chat_links" ng-repeat="link in chaturls track by $index | unique:'chaturls' ">{{link}}</a>
+            </div>
+            <div class="chat_container col-sm-4">
+                <form ng-submit="submitChat();body=''">
+                    <input ng-disabled="!authData" class="form-control input-lg" type="text" ng-model="body" name="body" placeholder="typ en druk op enter"/>
+                </form>
+                <div ng-repeat="chat in chatsInDatabase  | reverse">
+                    <div class="chat_body">
+                        <p class="chat_paragraph">
+                            {{chat.body}}
+                        </p>
+                        <img class="chat_avatar_photo" ng-src="{{chat.user.google.cachedUserProfile.picture}}">
+                        <span class="chat_avatar_timestamp">{{chat.dateAdded}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4" ng-controller="quoteFirebase">
+            <form ng-submit="submitQuote(quote);quote=''">
+                <input ng-disabled="!authData" class="form-control input-lg" type="textarea" rows="5" ng-model="quote" name="quote" placeholder="interessante citaten" />
+            </form>
+            <span class="quote" ng-repeat="quote in quoteBookRef">"{{quote.$value}}"</span>
+        </div>
+    </div>
+</div>

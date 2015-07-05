@@ -1,0 +1,100 @@
+.chat_avatar_timestamp
+{
+    font-size: 10px;
+
+    position: absolute;
+    right: 16px;
+    bottom: 5px;
+
+    margin-top: 3px;
+}
+
+.chat_avatar_photo
+{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 99%;
+}
+
+.chat_body
+{
+    font-weight: 400;
+
+    position: relative;
+
+    min-height: 100px;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+
+    color: #fff;
+    background: #20bff8;
+}
+
+.chat_body p
+{
+    color: #fff;
+}
+
+.chat_paragraph
+{
+    max-width: 80%;
+    word-break: break-all;
+        word-break: break-word;
+    -ms-word-break: break-all;
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+            hyphens: auto;
+}
+
+.chat_links
+{
+    display: inline-block;
+
+    margin: 2%;
+    padding: 3px 9px 3px 9px;
+
+        word-break: break-all;
+        word-break: break-word;
+    -ms-word-break: break-all;
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+            hyphens: auto;
+
+    background: #e7e7e7;
+}
+
+.animate.ng-enter,
+.animate.ng-leave
+{
+    position: relative;
+
+    display: block;
+
+    transition: 5000ms ease-in all;
+}
+
+.animate.ng-enter.ng-enter-active,
+.animate.ng-leave
+{
+    left: 0;
+}
+.animate.ng-leave.ng-leave-active,
+.animate.ng-enter
+{
+    left: 500px;
+}
+
+span.quote
+{
+    font-size: 16px;
+    font-style: italic;
+
+    display: block;
+
+    padding: 10px 0 0 3px;
+}

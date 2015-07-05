@@ -1,0 +1,26 @@
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="editBook.title" class="form-control" type="text" placeholder="Titel">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="editBook.author" class="form-control" type="text" placeholder="Auteur">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="editBook.cover" class="form-control" type="text" placeholder="Afbeelding">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="editBook.description" class="form-control" type="textarea" rows="10" placeholder="Beschrijving">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-10 input-group">
+		<input ng-model="editBook.date_added" class="form-control" type="date">
+	</div>
+</div>
+<img class="cover_in_database" ng-src="{{editBook.cover}}">
